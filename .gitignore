@@ -1,0 +1,9 @@
+.DS_Store
+*.mp4
+*.record
+.gitignore.txt
+tf_custom3/egohands/
+tf_custom3/images/
+tf_custom3/output_training/
+tf_custom3/ssd_mobilenet_v2_fpnlite_320x320_coco17_tpu-8
+tf_custom3/my_trained_model

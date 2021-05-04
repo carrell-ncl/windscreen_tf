@@ -1,7 +1,8 @@
 .DS_Store
 *.mp4
 *.record
-.gitignore.txt
+windscreen_tf/.gitignore
+
 tf_custom3/egohands/
 tf_custom3/images/
 tf_custom3/output_training/

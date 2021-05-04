@@ -28,6 +28,7 @@ from IPython.display import display
 from object_detection.utils import ops as utils_ops
 from object_detection.utils import label_map_util
 from object_detection.utils import visualization_utils as vis_util
+import time
 
 
 #Solves the CUDNN error issue
@@ -212,7 +213,27 @@ gt_boxes = gt_bb_location(annotations)
 pred_boxes = pred_bb_location_annotations(annotations) 
 
 
+def show_inference(model, image_np):
+  # the array based representation of the image will be used later in order to prepare the
+  # result image with boxes and labels on it.
+#   image_np = np.array(Image.open(image_path))
+  # Actual detection.
+  output_dict = run_inference_for_single_image(model, image_np)
+
+#   print(category_index)
+  # Visualization of the results of a detection.
+  final_img =vis_util.visualize_boxes_and_labels_on_image_array(
+          image_np,
+          output_dict['detection_boxes'],
+          output_dict['detection_classes'],
+          output_dict['detection_scores'],
+          category_index,
+          instance_masks=output_dict.get('detection_masks_reframed', None),
+          use_normalized_coordinates=True,
+          line_thickness=8
+          )
+  return(final_img)
 
 
 
-                    
+

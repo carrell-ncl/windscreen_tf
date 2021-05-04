@@ -12,7 +12,6 @@ from scipy.integrate import trapz
 
 
 
-
 annotations = extract_annot_data(test_annot_path)  
 gt_data = gt_bb_location(annotations)
 pred_data = pred_bb_location_annotations(annotations) 

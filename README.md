@@ -26,3 +26,25 @@ Check images or video using detection_custom.py
 
 (3)
 Calculate model accuracy by running get_AP_mAP.py. Ensure the paths are correct.
+
+File structure should look like the following:
+```bash
+─tf_custom3
+    ├───images
+    │   ├───test
+    │   └───train
+    ├───models
+    │   ├───***directories cloned from Tensorflow models API
+    ├───my_trained_model
+    │   ├───checkpoint
+    │   └───saved_model
+    │       ├───assets
+    │       └───variables
+    ├───output_training
+    │   └───train
+    ├───ssd_mobilenet_v2_fpnlite_320x320_coco17_tpu-8
+    │   ├───checkpoint
+    │   └───saved_model
+    │       └───variables
+    └───__pycache__
+```

@@ -1,7 +1,13 @@
 # Identification of Driver Phone Usage Violations using Tensorflow API - benchmarking multiple model architectures
 
-Versions:
-Tensorflow 2.3.0
+## Hardware/Software
+- NVIDIA RTX 2080
+- AMD Ryzen 3800X
+
+- Python 3.8
+- Tensorflow 2.2.0
+- Numpy 1.18.5
+- Pandas 1.2.3
 
 
 Custom object detector using Tensorflow API to detect 2 classes 1. person using mobile phone when driving, 2. vehicle licence plate

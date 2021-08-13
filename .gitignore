@@ -8,3 +8,8 @@ tf_custom3/images/
 tf_custom3/output_training/
 tf_custom3/ssd_mobilenet_v2_fpnlite_320x320_coco17_tpu-8
 tf_custom3/my_trained_model
+tf_custom3/mAP-master/input/
+tf_custom3/mAP-master/output/
+tf_custom3/archive_models
+tf_custom3/archived_models_new
+tf_custom3/_pycache_

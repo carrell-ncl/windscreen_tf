@@ -1,4 +1,4 @@
-# windscreen_tf
+# Identification of Driver Phone Usage Violations using Tensorflow API - benchmarking multiple model architectures
 
 Versions:
 Tensorflow 2.3.0
@@ -6,7 +6,9 @@ Tensorflow 2.3.0
 
 Custom object detector using Tensorflow API to detect 2 classes 1. person using mobile phone when driving, 2. vehicle licence plate
 
-(1)
+![](capture.gif)
+
+## Train
 Train model (skip if you do not need to train a new model).
 Open tf_custom.ipynb in notebooks or Google Colab
 Steps:
@@ -21,18 +23,36 @@ then within that have train and test image. Ensure to have the corresponding .XM
 - Train model
 - Output the trained model to .pb file
 
-(2)
+## Run model
 Check images or video using detection_custom.py
 
-(3)
-Calculate model accuracy by running get_AP_mAP.py. Ensure the paths are correct.
+## AP and mAP
+- Test images saved in mAP-master/input/images-optional
+- Annotations (Pascal format) saved in mAP-master/input/ground-truth (file names to be same name as image / file)
+- Run 'get_detection_results.py' to create detections files
+- Select IOU threshold in main.py - default set to 0.5
+- Set CWD to ./mAP-master and run 'main.py'
 
 File structure should look like the following:
 ```bash
-─tf_custom3
+└───tf_custom3
     ├───images
     │   ├───test
     │   └───train
+    ├───mAP-master
+    │   ├───input
+    │   │   ├───detection-results
+    │   │   │   └───archive
+    │   │   ├───ground-truth
+    │   │   │   ├───archive
+    │   │   │   └───backup
+    │   │   └───images-optional
+    │   ├───output
+    │   │   ├───classes
+    │   │   └───images
+    │   │       └───detections_one_by_one
+    │   └───scripts
+    │       └───extra
     ├───models
     │   ├───***directories cloned from Tensorflow models API
     ├───my_trained_model
@@ -40,11 +60,6 @@ File structure should look like the following:
     │   └───saved_model
     │       ├───assets
     │       └───variables
-    ├───output_training
-    │   └───train
-    ├───ssd_mobilenet_v2_fpnlite_320x320_coco17_tpu-8
-    │   ├───checkpoint
-    │   └───saved_model
-    │       └───variables
     └───__pycache__
 ```
+

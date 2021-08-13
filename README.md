@@ -6,7 +6,7 @@ Tensorflow 2.3.0
 
 Custom object detector using Tensorflow API to detect 2 classes 1. person using mobile phone when driving, 2. vehicle licence plate
 
-![](capture.gif)
+![](detection.gif)
 
 ## Train
 Train model (skip if you do not need to train a new model).
